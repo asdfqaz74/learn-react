@@ -1,7 +1,11 @@
 import React from "https://esm.sh/react";
 import { createRoot } from "https://esm.sh/react-dom";
 
-const app = (
+// with JSX
+// 브라우저는 해석 못함: 비표준 기술
+// 브라우저 해석할 수 있도록 변환(Compiler)
+// (ex: Sass → CSS, TypeScript → JavaScript)
+createRoot(document.getElementById("root")).render(
   <div id="app">
     <h1>
       안녕!
@@ -14,8 +18,3 @@ const app = (
     </p>
   </div>
 );
-
-const rootElement = document.getElementById("root");
-const reactDomRoot = createRoot(rootElement);
-
-reactDomRoot.render(app);
