@@ -31,11 +31,6 @@ export function createRoot(domNode /* container */) {
     domNode.append(element);
   };
 
-  // DOM에 렌더링 하는 함수
-  const render = (element) => {
-    domNode.append(element);
-  };
-
   // DOM에 렌더링된 루트 요소를 제거
   const unmount = () => {
     domNode.firstElementChild.remove();
