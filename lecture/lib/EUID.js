@@ -16,6 +16,7 @@ function createRoot(domNode /* container */) {}
 // EUID 객체의 멤버로 내보내기
 const EUID = Object.freeze({
   createElement,
+  createRoot,
 });
 
 // 모듈 기본 내보내기
