@@ -16,7 +16,7 @@ export function createElement(type, props = {}, ...children) {
   // 식(expression)
   keyValues.forEach(([key, value]) => element.setAttribute(key, value));
 
-  // ...children 을 순환해서, 개별적으로 element의 자식으로 설정
+  // ...children을 순환해서, 개별적으로 element의 자식으로 설정
   element.append(...children);
 
   // 생성한 DOM 요소 노드 반환
