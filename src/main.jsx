@@ -1,23 +1,18 @@
 import React from "https://esm.sh/react";
 import { createRoot } from "https://esm.sh/react-dom";
 
+// HTML vs. JSX (HTML 아님, 문법은 XML과 유사)
+
+// JavaScript는 예약어를 변수 이름 또는 함수 이름으로 사용할 수 없음
+// const for = () => {};
+
 const data = {
   greetingMessage: ["hello!", "react."],
   message:
     "리액트는 사용자 인터페이스 구축을 위한 JavaScript 오픈소스 라이브러리입니다.",
 };
 
-const createApp = (
-  // data
-  // [0] data
-  // [3]
-  data,
-  // options
-  options = {} // [ES6 Core] default parameter
-) => {
-  // [1]
-  // const { greetingMessage: [ firstMessage, lastMessage ], message } = data;
-
+const createApp = (data, options = {}) => {
   return (
     <div id="app">
       <h1>
@@ -27,10 +22,6 @@ const createApp = (
       </h1>
       <p>{data.message}</p>
       <form>
-        {/* ❌ */}
-        {/* <input aria-label="중요도" type="range" disabled="options.isDisabled" /> */}
-        {/* ✅ */}
-        {/* props 또한 {} 안에 값을 끼워넣을 수 있음 */}
         <input
           type="range"
           min={options.min}
@@ -41,6 +32,12 @@ const createApp = (
         />
         <button type="submit">보내기</button>
       </form>
+      <form>
+        <label for="searchKeyword" class="sr-only">
+          검색
+        </label>
+        <input type="search" id="searchKeyword" placeholder="검색" />
+      </form>
     </div>
   );
 };
@@ -49,15 +46,11 @@ const rootElement = document.getElementById("root");
 const reactDomRoot = createRoot(rootElement);
 
 reactDomRoot.render(
-  createApp(
-    data,
-    /* options 객체 */
-    {
-      label: "중요도",
-      isDisabled: false,
-      min: 0,
-      step: 1,
-      max: 20,
-    }
-  )
+  createApp(data, {
+    label: "중요도",
+    isDisabled: false,
+    min: 0,
+    step: 1,
+    max: 20,
+  })
 );
