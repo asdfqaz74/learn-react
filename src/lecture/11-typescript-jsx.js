@@ -1,5 +1,5 @@
-import ReactDOM from 'react-dom/client';
 import React from 'react';
+import ReactDOM from 'react-dom/client';
 const createApp = () => {
     return (React.createElement("div", { id: "app" },
         React.createElement("h1", null,
