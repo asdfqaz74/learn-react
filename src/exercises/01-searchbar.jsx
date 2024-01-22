@@ -9,7 +9,10 @@ import "./01-searchbar.css";
 
 // DOM Script === Vanilla Script
 function bodyStyling() {
-  document.body.style.backgroundColor = `#f4f6f8`;
+  document.body.style.cssText = `
+    padding: 20px;
+    background-color: #f4f6f8;
+  `;
 }
 
 bodyStyling();
