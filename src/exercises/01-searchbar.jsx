@@ -1,5 +1,20 @@
 import React from "https://esm.sh/react";
 import { createRoot } from "https://esm.sh/react-dom";
+// no module (without from)
+import "./01-searchbar.css";
+
+// module
+import React from "https://esm.sh/react";
+import { createRoot } from "https://esm.sh/react-dom";
+
+// DOM Script === Vanilla Script
+function bodyStyling() {
+  document.body.style.backgroundColor = `#f4f6f8`;
+}
+
+bodyStyling();
+
+/* -------------------------------------------------------------------------- */
 
 const renderIconCircle = () => (
   <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -72,8 +87,10 @@ const renderFormControl = () => (
 
 const renderSearchBar = () => (
   <form className="searchBar">
-    {renderIconNaver()}
-    {renderFormControl()}
+    <div role="group">
+      {renderIconNaver()}
+      {renderFormControl()}
+    </div>
     {renderSearchButton()}
   </form>
 );
