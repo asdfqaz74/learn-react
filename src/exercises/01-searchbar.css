@@ -89,3 +89,41 @@
     }
   }
 }
+
+.kosdaq{
+  display: flex;
+  flex-direction: column;
+  inline-size: 192px;
+  block-size: 72px;
+  padding: 16px 8px 16px 16px;
+  background: var(--white);
+  border-radius: 6px;
+  box-shadow: 0px 4px 4px 0px rgba(181, 181, 181, 0.15);
+  justify-content: center;
+  gap: 4px;
+
+
+  [role="group"] {
+    display: flex;
+    gap: 3px;
+  }
+
+  .grade {
+    color : var(--gray--950);
+    font-size: 20px;
+    font-weight: 700;
+  }
+
+  .name {
+    color: var(--gray--500);
+    font-size: 12px;
+    font-weight: 500;
+  }
+
+  .percent {
+    color: var(--blue--200);
+    font-size: 12px;
+    font-weight: 500;
+  }
+
+}

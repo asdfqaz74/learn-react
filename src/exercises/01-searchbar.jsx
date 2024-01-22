@@ -4,8 +4,8 @@ import { createRoot } from "https://esm.sh/react-dom";
 import "./01-searchbar.css";
 
 // module
-import React from "https://esm.sh/react";
-import { createRoot } from "https://esm.sh/react-dom";
+// import React from "https://esm.sh/react";
+// import { createRoot } from "https://esm.sh/react-dom";
 
 // DOM Script === Vanilla Script
 function bodyStyling() {
@@ -70,6 +70,16 @@ const renderIconNaver = () => (
   </svg>
 );
 
+const renderKosdaq = () => (
+  <div className="kosdaq">
+    <span className="grade">859.65</span>
+    <div role="group">
+      <span className="name">코스닥</span>
+      <span className="percent">⏷0.97%</span>
+    </div>
+  </div>
+);
+
 const renderSearchButton = () => (
   <button type="submit" aria-label="검색" title="검색">
     {renderIconCircle()}
@@ -86,13 +96,16 @@ const renderFormControl = () => (
 );
 
 const renderSearchBar = () => (
-  <form className="searchBar" onSubmit={(e) => e.preventDefault()}>
-    <div className="searchBarGroup" role="group">
-      {renderIconNaver()}
-      {renderFormControl()}
-    </div>
-    {renderSearchButton()}
-  </form>
+  <>
+    <form className="searchBar" onSubmit={(e) => e.preventDefault()}>
+      <div className="searchBarGroup" role="group">
+        {renderIconNaver()}
+        {renderFormControl()}
+      </div>
+      {renderSearchButton()}
+    </form>
+    {renderKosdaq()}
+  </>
 );
 
 createRoot(document.getElementById("root")).render(renderSearchBar());
