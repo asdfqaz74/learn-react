@@ -4,8 +4,8 @@ import { createRoot } from "https://esm.sh/react-dom";
 import "./01-searchbar.css";
 
 // module (with from)
-import React from "https://esm.sh/react";
-import { createRoot } from "https://esm.sh/react-dom";
+// import React from "https://esm.sh/react";
+// import { createRoot } from "https://esm.sh/react-dom";
 
 // DOM Script === Vanilla Script
 function bodyStyling() {
