@@ -1,18 +1,5 @@
-import { createRoot } from "react-dom/client";
-
-// [학습 주제]
-// 컴포넌트 재사용
-
-// .formControl>label+input
-function FormControl() {
-  return (
-    <div className="formControl">
-      <label>
-        사용자 이름 <input type="text" name="username" />
-      </label>
-    </div>
-  );
-}
+import { createRoot } from 'react-dom/client';
+import FormControl from '../components/FormControl';
 
 function App() {
   return (
@@ -23,4 +10,4 @@ function App() {
   );
 }
 
-createRoot(document.getElementById("root")).render(<App />);
+createRoot(document.getElementById('root')).render(<App />);

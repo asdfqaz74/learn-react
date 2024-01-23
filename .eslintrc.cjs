@@ -5,16 +5,16 @@ module.exports = {
     node: true,
   },
   extends: [
-    "eslint:recommended",
-    "plugin:react/recommended",
-    "plugin:react/jsx-runtime",
+    'eslint:recommended', 
+    'plugin:react/recommended',
+    'plugin:react/jsx-runtime'
   ],
   overrides: [],
   parserOptions: {
-    ecmaVersion: "latest",
-    sourceType: "module",
+    ecmaVersion: 'latest',
+    sourceType: 'module',
   },
-  plugins: ["react"],
+  plugins: ['react'],
   rules: {
     // "react/jsx-uses-react": "off",
     // "react/react-in-jsx-scope": "off"
