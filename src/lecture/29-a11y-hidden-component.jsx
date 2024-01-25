@@ -1,22 +1,36 @@
 import { A11yHidden } from '../components';
-// src 안에 있는 자산(에셋, assets)을 번들러를 사용해서 화면에 표시하고,
-// 빌드했을 때 정상적으로 이미지를 빌드하려면 import로 호출해서 사용해야 한다.
 import bannerImage from '../assets/banner.png';
-import { getStaticImage } from '../utils/getStaticAsset';
+
+const bannerInfo =
+  '미래를 향해, 미래를 항해 변화무쌍한 바다를 항해하는 것은 때로는 방향을 바꿔야 할 때도, 또 속도를 조절해야 할 때도 있습니다. 하지만 변함없는 것은 목적지를 향해 꾸준히 항해한다는 것입니다. 미래에도. 미래의 미래에도 행복은 지속가능해야 한다는 믿음으로 SK도 미래를 향해. 미래를 항해하겠습니다.';
 
 function Exercise() {
   return (
     <figure>
-      {/* ✅ public 정적 자산 */}
-      <img src={getStaticImage('faces/woman-02.jpg')} alt="" />
-
-      {/* ❌ 마치 정적인 것처럼 src 안의 자산 */}
-      <img src="/src/assets/banner.png" alt="" height={100} />
-
-      {/* ✅ src/assets 동적 자산으로 호출(import) */}
-      <img src={bannerImage} alt="" height={100} />
+      {/* <ExampleImg /> */}
+      <div
+        role="img"
+        style={{
+          backgroundImage: `url(${bannerImage})`,
+          backgroundRepeat: 'no-repeat',
+          backgroundPosition: 'center',
+          backgroundSize: 'contain',
+          width: 1920 / 2,
+          height: 1080 / 2,
+        }}
+      >
+        {/* <span className="sr-only">{bannerInfo}</span> */}
+        <A11yHidden>{bannerInfo}</A11yHidden>
+      </div>
     </figure>
   );
+}
+
+{
+  /* <img /> 경우 alt 속성에 접근 가능한 정보를 제공 */
+}
+function ExampleImg() {
+  return <img src={bannerImage} alt={bannerInfo} height={800} />;
 }
 
 export default Exercise;
