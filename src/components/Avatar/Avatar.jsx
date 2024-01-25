@@ -2,7 +2,7 @@ import './Avatar.css';
 
 function Avatar(
   /* props */
-  { photo, isOnline = false }
+  { photo, name, isOnline = false }
 ) {
   return null;
 }
