@@ -11,6 +11,13 @@ function Exercise() {
       item.face = 4;
     }
 
+    // 랜덤 온/오프라인 설정
+    if (Math.random() >= 0.5) {
+      item.isOnline = true;
+    } else {
+      item.isOnline = false;
+    }
+
     return item;
   }); // map 메서드 -> 새로운 배열
   // console.log(Object.is(contactData.items, items)); // 복제해서 생성된 배열
@@ -22,7 +29,7 @@ function Exercise() {
   return (
     /* JSX 영역에서는 식만 사용 가능 */
     <ul>
-      {items.map(({ id, gender, face, name }) => {
+      {items.map(({ id, gender, face, name, isOnline }) => {
         const photoUrl = `/images/faces/${gender}-0${face}.jpg`;
 
         // function body 영역
@@ -31,7 +38,7 @@ function Exercise() {
         return (
           /* JSX 영역에서는 식만 사용 가능 */
           <li key={id}>
-            <Avatar photo={photoUrl} name={name} isOnline={true} />
+            <Avatar photo={photoUrl} name={name} isOnline={isOnline} />
           </li>
         );
       })}
