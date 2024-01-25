@@ -3,8 +3,8 @@ import Avatar from '../components/Avatar/Avatar';
 function Exercise() {
   return (
     <>
-      <Avatar isOnline={true}></Avatar>
-      <Avatar isOnline={false}></Avatar>
+      <Avatar isOnline={true} />
+      <Avatar isOnline={false} />
     </>
   );
 }

@@ -1,6 +1,9 @@
 import './Avatar.css';
 
-function Avatar /* props */({ photo, isOnline = false }) {
+function Avatar(
+  /* props */
+  { photo, isOnline = false }
+) {
   return null;
 }
 
