@@ -59,6 +59,7 @@ function DemoImg(
   }
 ) {
   const classNames = `${classes.demo} ${className}`.trim();
+
   const defaultStyles = {
     backgroundImage: `url(${imageSource})`,
     width: width ? width / ratio : undefined,
@@ -66,18 +67,15 @@ function DemoImg(
     filter: 'blur(0px)',
   };
 
+  const styles = {
+    // 컴포넌트 개발자가 설정한 기본 스타일 객체
+    ...defaultStyles,
+    // 컴포넌트 사용자가 설정한 스타일 객체
+    ...customStyles,
+  };
+
   return (
-    <div
-      role="img"
-      className={classNames}
-      style={{
-        // 컴포넌트 개발자가 설정한 기본 스타일 객체
-        ...defaultStyles,
-        // 컴포넌트 사용자가 설정한 스타일 객체
-        ...customStyles,
-      }}
-      {...restProps}
-    >
+    <div role="img" className={classNames} style={styles} {...restProps}>
       {children}
     </div>
   );
