@@ -1,10 +1,11 @@
-import { CatCardList } from './../components/index';
+import { A11yHidden, CatCardList } from '../components';
 
 function Exercise() {
   return (
-    <>
-      <CatCardList></CatCardList>
-    </>
+    <section>
+      <A11yHidden as="h2">고양이 카드 리스트</A11yHidden>
+      <CatCardList />
+    </section>
   );
 }
 
