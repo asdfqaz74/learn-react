@@ -2,8 +2,6 @@ import bannerImage from '../assets/banner.png';
 import { A11yHidden } from '../components';
 import classes from './29-a11y-hidden-component.module.css';
 
-console.log(classes);
-
 const bannerInfo =
   '미래를 향해, 미래를 항해 변화무쌍한 바다를 항해하는 것은 때로는 방향을 바꿔야 할 때도, 또 속도를 조절해야 할 때도 있습니다. 하지만 변함없는 것은 목적지를 향해 꾸준히 항해한다는 것입니다. 미래에도. 미래의 미래에도 행복은 지속가능해야 한다는 믿음으로 SK도 미래를 향해. 미래를 항해하겠습니다.';
 
@@ -18,6 +16,8 @@ function Exercise() {
     <figure>
       {/* [1] 스타일 확장 시, props 합성 주의! */}
       <DemoImg
+        data-testid="demo image"
+        aria-label="좋은 세상 만들기"
         className="one two three"
         imageSource={bannerImage}
         ratio={4}
@@ -37,7 +37,8 @@ function Exercise() {
 }
 
 function DemoImg(
-  /* props 객체 */ {
+  /* props 객체 */
+  {
     imageSource,
     className,
     style,
@@ -45,6 +46,7 @@ function DemoImg(
     height = 790,
     ratio = 1,
     children,
+    ...restProps
   }
 ) {
   const classNames = `${classes.demo} ${className}`;
@@ -55,8 +57,11 @@ function DemoImg(
     filter: 'blur(0px)',
   };
 
+  console.log(restProps);
+
   return (
     <div
+      {...restProps}
       role="img"
       className={classNames}
       style={{
