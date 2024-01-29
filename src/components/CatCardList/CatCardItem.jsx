@@ -3,7 +3,21 @@ import { getStaticImage } from '../../utils/getStaticAsset';
 import convertDayFormat from '../../utils/convertDayFormat';
 
 function CatCardItem({ cat: { imageAlt, imageSrc, name, badges, birthday } }) {
-  console.log(badges.length > 0);
+  let renderBadges = null;
+
+  // if 문
+  if (badges.length > 0) {
+    // for 문
+    const renderBadgeList = badges.map((badge) => (
+      <li key={badge.slug}>{badge.label}</li>
+    ));
+
+    renderBadges = (
+      <ul className={`${classes.badgeList} ${classes.golden}`}>
+        {renderBadgeList}
+      </ul>
+    );
+  }
 
   return (
     <article className={classes.CatCard}>
@@ -14,13 +28,7 @@ function CatCardItem({ cat: { imageAlt, imageSrc, name, badges, birthday } }) {
           태어난 날: {convertDayFormat(birthday)}
         </p>
       </header>
-      {badges.length > 0 && (
-        <ul className={`${classes.badgeList} ${classes.golden}`}>
-          {badges.map((badge) => (
-            <li key={badge.slug}>{badge.label}</li>
-          ))}
-        </ul>
-      )}
+      {renderBadges}
     </article>
   );
 }
