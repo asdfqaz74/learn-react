@@ -1,0 +1,63 @@
+.box {
+  border-radius: 8px;
+  border: 1px solid #F9FEFE;
+  background: #FFF;
+  box-shadow: 0px 0px 2px 0px rgba(114, 119, 124, 0.20);
+  display: flex;
+  width: 332px;
+  height: 84px;
+  min-width: 332px;
+  min-height: 84px;
+  max-height: 84px;
+  padding: 20px;
+  align-items: center;
+  gap: 20px;
+}
+
+.innerBox {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  flex: 1 0 0;
+  position: relative;
+}
+
+.theme {
+  display: flex;
+  width: 28px;
+  height: 28px;
+  padding: 5.6px;
+  /* align-items: flex-start;
+  gap: 5.6px;
+  flex-shrink: 0; */
+  border-radius: 5.6px;
+}
+
+.title {
+  font-family: "SUIT Variable";
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.text {
+  color: #929B90;
+  font-family: "SUIT Variable";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.time {
+  position: absolute;
+  right: 3px;
+  top: 4px;
+  font-family: "SUIT Variable";
+  font-size: 11px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
