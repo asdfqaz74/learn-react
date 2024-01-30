@@ -42,17 +42,21 @@ function Exercise() {
   };
 
   const handleToggle = () => {
-    setIsPlaying((x) => !x);
+    // 이전(previous) 상태 값 기반으로 값 설정
+    // isPlaying = true | false
+    setIsPlaying(/* [2] callback api */ (isPlaying) => !isPlaying);
   };
 
   const handleStart = () => {
     // 상태 변경 요청(trigger) -> 리액트 UI 렌더링(함수 컴포넌트 다시 실행 => JSX 다시 반환)
     const nextIsPlaying = true;
-    setIsPlaying(nextIsPlaying);
+    // 새로운 (다음: next) 상태 값 설정
+    setIsPlaying(/* [1] new value */ nextIsPlaying);
   };
 
   const handlePause = () => {
     const nextIsPlaying = false;
+    // 새로운 (다음: next) 상태 값 설정
     setIsPlaying(nextIsPlaying);
   };
 
@@ -76,6 +80,7 @@ function Exercise() {
         <button
           type="button"
           aria-label="게임 시작"
+          // onClick={handleStart}
           onClick={handleToggle}
           disabled={isPlaying /* true */}
         >
@@ -84,6 +89,7 @@ function Exercise() {
         <button
           type="button"
           aria-label="게임 일시정지"
+          // onClick={handlePause}
           onClick={handleToggle}
           disabled={!isPlaying /* !false = true */}
         >
