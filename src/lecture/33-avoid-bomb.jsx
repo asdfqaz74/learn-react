@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import classes from './33-avoid-bomb.module.css';
 // console.log(classes);
 
@@ -11,6 +12,9 @@ function Exercise() {
   // 상태 변경 트리거(요청) → 리액트 감지 → 렌더(가상DOM) → (스냅샷 비교, 재조정)변경이 있을 경우 → 커밋(DOM 반영) → 페인팅
 
   // 어떤 상태??? 게임 재생/일시정지 제어
+
+  const [isPlaying, setIsPlaying] = useState(false);
+
   const gameClassNames = `${classes.game} ${classes.stop}`.trim();
 
   // 이벤트 핸들러
@@ -22,6 +26,15 @@ function Exercise() {
     globalThis.alert('게임 패! 🥲');
   };
 
+  const handleStart = () => {
+    const nextIsPlaying = true;
+    setIsPlaying(nextIsPlaying);
+  };
+
+  const handlePause = () => {
+    const nextIsPlaying = false;
+    setIsPlaying(nextIsPlaying);
+  };
   return (
     <>
       <div className={gameClassNames}>
@@ -39,10 +52,20 @@ function Exercise() {
         </button>
       </div>
       <div className={classes.gameControls} role="group">
-        <button type="button" aria-label="게임 시작" disabled>
+        <button
+          type="button"
+          aria-label="게임 시작"
+          onClick={handleStart}
+          disabled={isPlaying}
+        >
           start
         </button>
-        <button type="button" aria-label="게임 일시정지">
+        <button
+          type="button"
+          aria-label="게임 일시정지"
+          onClick={handlePause}
+          disabled={!isPlaying}
+        >
           pause
         </button>
       </div>
