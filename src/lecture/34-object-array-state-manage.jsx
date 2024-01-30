@@ -9,12 +9,12 @@ function CatsList() {
   // 고양이 집합(catsData) : Array
   const [cats, setCats] = useState(catsData);
 
-  const handleDeleteCat = () => {
+  const handleDeleteCat = (deleteCatId) => {
     // [1] 새로운 값 설정
-    // setCats(cats.filter((cat) => !cat.birthday.includes('1974')));
+    setCats(cats.filter((cat) => cat.id !== deleteCatId));
 
     // [2] 콜백 함수: 이전 값을 연산해서 반환한 값 설정
-    setCats((cats) => cats.filter((cat) => !cat.birthday.includes('1974')));
+    // setCats((cats) => cats.filter((cat) => cat.id !== deleteCatId));
   };
 
   return (
@@ -36,7 +36,7 @@ function CatsList() {
             type="button"
             aria-label="삭제"
             title="삭제"
-            onClick={handleDeleteCat}
+            onClick={() => handleDeleteCat(cat.id)}
           >
             ⅹ
           </button>
