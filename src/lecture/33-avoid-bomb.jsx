@@ -18,7 +18,9 @@ function Exercise() {
   // 프리미티브(primitive) 타입: 불변(immutable) 데이터 관리
   const [isPlaying, setIsPlaying] = useState(false /* 초깃값: initial value */);
 
-  const gameClassNames = `${classes.game} ${classes.stop}`.trim();
+  const gameClassNames = `${classes.game} ${
+    !isPlaying ? classes.stop : ''
+  }`.trim();
 
   // 이벤트 핸들러
   const handleBall = () => {
