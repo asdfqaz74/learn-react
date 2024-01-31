@@ -1,5 +1,5 @@
 import './App.css';
-import Exercise from '@/lecture/36-1-lifting-state-up';
+import Exercise from '@/lecture/37-2-react-form-exercise';
 
 function App() {
   return (
