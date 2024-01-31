@@ -1,7 +1,7 @@
 import { app as appClasName } from './App.module.css';
-import Exercise from '@/lecture/36.catch-mole';
+import Exercise from '@/lecture/37-pizza';
 
-console.log(appClasName);
+// console.log(appClasName);
 
 function App() {
   return (
