@@ -1,4 +1,4 @@
-import classes from './36-lifting-state-up.module.css';
+import classes from './36-1-lifting-state-up.module.css';
 import { useState } from 'react';
 import { A11yHidden } from '@/components';
 

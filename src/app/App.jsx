@@ -1,5 +1,5 @@
 import { app as appClasName } from './App.module.css';
-import Exercise from '@/lecture/37-3-react-form-exercise.jsx';
+import Exercise from '@/lecture/36.catch-mole';
 
 console.log(appClasName);
 
