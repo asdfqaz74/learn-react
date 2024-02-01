@@ -19,10 +19,7 @@ const PIZZA = {
     '밀라노 스폰티니 피자, 시찰리아 칼초네 피자, 시카고 피자, 페페로니 피자, 하와이안 피자'.split(
       ', '
     ),
-  toppings:
-    '새우, 고구마, 감자, 올리브, 페페로니, 치즈, 파인애플, 가지, 불고기'.split(
-      ', '
-    ),
+  toppings: '새우, 고구마, 감자, 올리브, 페페로니'.split(', '),
 };
 
 const INITIAL_ORDER = {
@@ -49,10 +46,14 @@ function Form() {
   };
 
   const handleChangeAllToppings = (e) => {
-    setOrderState({
+    setOrderState((orderState) => ({
       ...orderState,
       isAllToppings: e.target.checked,
-    });
+    }));
+    setOrderState((orderState) => ({
+      ...orderState,
+      toppings: orderState.isAllToppings ? PIZZA.toppings : [],
+    }));
   };
 
   const handleChangePizzaToppings = (e) => {
@@ -71,12 +72,15 @@ function Form() {
       nextToppings = orderState.toppings.filter((t) => t !== topping);
     }
 
-    // console.log('다음 토핑 목록: ', nextToppings);
+    const hasFullFilledToppings = nextToppings.length === PIZZA.toppings.length;
 
     const nextOrderState = {
       ...orderState,
       toppings: nextToppings,
+      isAllToppings: hasFullFilledToppings,
     };
+
+    console.log('다음 토핑 목록: ', nextToppings, hasFullFilledToppings);
 
     setOrderState(nextOrderState);
   };
