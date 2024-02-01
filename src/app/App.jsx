@@ -1,7 +1,5 @@
 import { app as appClasName } from './App.module.css';
-import Exercise from '@/lecture/37-pizza';
-
-// console.log(appClasName);
+import Exercise from '@/lecture/40-side-effects';
 
 function App() {
   return (
