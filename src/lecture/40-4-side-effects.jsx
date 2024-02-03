@@ -81,7 +81,7 @@ function Exercise() {
         type="button"
         onClick={() => {
           memoizedRef.current.x += 1;
-          memoizedRef.current.y -= 2;
+          memoizedRef.current.y += 2;
 
           console.log(memoizedRef.current.x, memoizedRef.current.y);
         }}
@@ -94,8 +94,8 @@ function Exercise() {
         type="button"
         onClick={() => {
           setPosition(({ x, y }) => ({
-            x: x + 2,
-            y: y + 1,
+            x: x + 1,
+            y: y + 2,
           }));
         }}
       >
