@@ -4,6 +4,7 @@ function useKey(key, callback, eventType = 'keydown') {
   useEffect(() => {
     const handler = (e) => {
       if (e.code.toLowerCase() === key.toLowerCase()) {
+        console.log(e);
         callback?.(e);
       }
     };

@@ -1,6 +1,16 @@
 import { useState, useEffect } from 'react';
 
-function useMousePosition(/* debounceTime = 0 */) {
+function debounce(callback, timeout = 300) {
+  let timer;
+  return (...args) => {
+    clearTimeout(timer);
+    timer = setTimeout(() => {
+      callback.apply(this, args);
+    }, timeout);
+  };
+}
+
+function useMousePosition(time) {
   const [position, setPosition] = useState({ x: 0, y: 0 });
 
   useEffect(() => {
@@ -13,12 +23,12 @@ function useMousePosition(/* debounceTime = 0 */) {
       setPosition(nextPosition);
     };
 
-    globalThis.addEventListener('mousemove', handleMove);
+    globalThis.addEventListener('mousemove', debounce(handleMove, time));
 
     return () => {
       globalThis.removeEventListener('mousemove', handleMove);
     };
-  }, []);
+  }, [time]);
 
   return [position.x, position.y];
 }
