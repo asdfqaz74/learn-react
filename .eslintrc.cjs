@@ -9,7 +9,7 @@ module.exports = {
     'plugin:react/recommended',
     'plugin:react/jsx-runtime',
     'plugin:storybook/recommended',
-    'plugn:react-hooks/recommended',
+    'plugin:react-hooks/recommended',
   ],
   overrides: [],
   ignorePatterns: ['dist', '.eslintrc.cjs'],
