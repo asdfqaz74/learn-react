@@ -1,5 +1,5 @@
 import { app as appClasName } from './App.module.css';
-import Exercise from '@/lecture/42-1-external-lib-dom-control';
+import Exercise from '@/lecture/44-3-forward-ref-prop';
 
 function App() {
   return (
