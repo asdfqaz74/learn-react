@@ -3,6 +3,12 @@ import {
   createBrowserRouter,
   createRoutesFromElements,
 } from 'react-router-dom';
+
+// Layouts
+import RootLayout from '@/pages/RootLayout';
+import AdminLayout from '@/pages/AdminLayout';
+
+// Pages
 import HomePage from '@/pages/Home';
 import IntroPage from '@/pages/Intro';
 
@@ -12,11 +18,17 @@ const routes = [
   // { path, element, ... }
   {
     path: '/',
-    element: <HomePage />,
-  },
-  {
-    path: '/intro',
-    element: <IntroPage />,
+    element: <RootLayout />,
+    children: [
+      {
+        path: '',
+        element: <HomePage />,
+      },
+      {
+        path: '/intro',
+        element: <IntroPage />,
+      },
+    ],
   },
 ];
 
@@ -25,11 +37,19 @@ const options = {
 };
 
 // 라우터 인스턴스 생성
-// const router = createBrowserRouter(routes, options);
+let router = createBrowserRouter(routes, options);
 
 // JSX 라우터 구성 + 라우터 인스턴스 생성
-const router = createBrowserRouter(
-  createRoutesFromElements(<Route path="/" element={<HomePage />} />)
+router = createBrowserRouter(
+  createRoutesFromElements(
+    <Route path="/" element={<RootLayout />}>
+      <Route path="" element={<HomePage />} />
+      <Route path="intro" element={<IntroPage />} />
+      <Route path="/admin" element={<AdminLayout />}>
+        {/* .... */}
+      </Route>
+    </Route>
+  )
 );
 
 // 라우터 인스턴스 기본 내보내기

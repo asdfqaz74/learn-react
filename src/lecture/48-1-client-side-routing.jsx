@@ -11,17 +11,17 @@ import router from '@/routes';
 // 3-2. 라우터 공급 ← RouterProvider (https://bit.ly/42K41xG)
 // 3-3. JSX 루트(routes) ← createRoutesFromElements (https://bit.ly/3SD7QA7)
 //
-// 4. 루트(Routes) 구성
+// 4. 루트(Routes) 구성 ✅
 // 4-1. 루트 레이아웃(Root Layout) 컴포넌트
 // 4-2. 루트 레이아웃(Root Layout)에 포함할 컴포넌트 추가 (예: Header, Footer, Sidebar 등)
 //
-// 5. 중첩된 루트(Nested Routes) 구성
+// 5. 중첩된 루트(Nested Routes) 구성 ✅
 // 5-2. 중첩된 루트(nested route)를 포함할 children 구성 (https://bit.ly/3w6XS27)
 // 5-3. 루트 레이아웃에 중첩된 루트를 배출할 Outlet 컴포넌트 구성 (https://bit.ly/3SVdr65)
 // 5-4. 레이아웃 루트 (https://bit.ly/49u3vpB)
 //
 // 6. 앱 내비게이션 (App Navigation)
-// 6-1. URL 세그먼트(segments)
+// 6-1. URL 세그먼트(segments) [`/`, `/admin`, `/products/vegetable`]
 // 6-2. Link 컴포넌트를 사용해 페이지 내비게이션 (https://bit.ly/48dEy0z)
 // 6-3. NavLink 컴포넌트를 활용해 내비게이션 (https://bit.ly/4bBuqBz)
 // 6-4. NavLink 활성 상태 클래스 핸들링 (https://bit.ly/3UFbFaC)
