@@ -1,11 +1,11 @@
-import { memo, useContext } from 'react';
+import { memo } from 'react';
+import { useChatStates } from '@/contexts/Chat';
 import ChatRoomInfo from './ChatRoomInfo';
 import MessageInput from './MessageInput';
 import SpeechBubble from './SpeechBubble';
-import { ChatContext } from './ChatPage';
 
 function ChatRoom() {
-  const { users } = useContext(ChatContext);
+  const { users } = useChatStates();
 
   return (
     <div className="flex flex-col gap-5 bg-slate-200 p-5">

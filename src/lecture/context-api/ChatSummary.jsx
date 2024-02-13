@@ -1,9 +1,9 @@
+import { useChatUpdaters } from '@/contexts/Chat';
 import { func } from 'prop-types';
-import { memo, useContext } from 'react';
-import { ChatContext } from './ChatPage';
+import { memo } from 'react';
 
 function ChatSummary() {
-  const { updateUsers: onUpdate } = useContext(ChatContext);
+  const { updateUsers: onUpdate } = useChatUpdaters();
 
   return (
     <div className="flex flex-col gap-5 bg-slate-200 p-5">
