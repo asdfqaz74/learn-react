@@ -1,9 +1,22 @@
-function SpeechBubble() {
+import { CHAT_MESSAGE_TYPE } from './types';
+
+function SpeechBubble({ messages }) {
   return (
-    <div>
-      <h3>SpeechBubble</h3>
+    <div className="flex flex-col gap-5 bg-slate-400 text-slate-50 p-5">
+      <h3 className="text-slate-600">SpeechBubble</h3>
+      <ul>
+        {messages.map((message, index) => (
+          <li key={index} className="text-xs text-slate-900">
+            {message}
+          </li>
+        ))}
+      </ul>
     </div>
   );
 }
+
+SpeechBubble.propTypes = {
+  messages: CHAT_MESSAGE_TYPE.isRequired,
+};
 
 export default SpeechBubble;
