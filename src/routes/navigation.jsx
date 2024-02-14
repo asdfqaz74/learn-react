@@ -3,7 +3,7 @@ import HomePage from '@/pages/Home';
 import IntroContextPage from '@/pages/IntroContext';
 import NonBlockUIPage from '@/pages/NonBlockUI';
 import DeferredValuePage from '@/pages/DeferredValue';
-import SkipToContent from '@/components/SkipToContent/SkipToContent';
+import SkipToContentPage from '@/pages/SkipToContent';
 
 // 내비게이션 구성(navigation configuration)
 const navigationItems = [
@@ -23,7 +23,7 @@ const navigationItems = [
     id: 'skip-to-content',
     path: '/skip-to-content',
     text: '메인 영역 바로가기',
-    element: <SkipToContent />,
+    element: <SkipToContentPage />,
   },
   {
     id: 'deferred-value',
